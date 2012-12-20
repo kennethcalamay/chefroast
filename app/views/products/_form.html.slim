@@ -4,6 +4,13 @@
     .controls
       = f.text_field :name
   .control-group
+    = f.label :image, class: 'control-label'
+    .controls
+      - if @product.image?
+        = image_tag :@product.image_url
+      = f.hidden_field :image_cache
+      = f.file_field :image
+  .control-group
     = f.label :description, class: 'control-label'
     .controls
       = f.text_area :description, rows: 3

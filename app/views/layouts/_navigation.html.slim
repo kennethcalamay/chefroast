@@ -4,7 +4,7 @@
     ul.nav
       li
         a href="#about_us" About Us
-      li.active
-        a href="#" Our Menu
+      li class=(current_page?(root_url) || current_page?(products_path)? 'active' : nil)
+        = link_to "Menu", root_url
       li
-        a href="#contact" Contact Us
+        a href="#contact" Contact

@@ -1,0 +1,18 @@
+= form_for @product, html: { class: 'form-horizontal' } do |f|
+  .control-group
+    = f.label :name, class: 'control-label'
+    .controls
+      = f.text_field :name
+  .control-group
+    = f.label :description, class: 'control-label'
+    .controls
+      = f.text_area :description, rows: 3
+  .control-group
+    = f.label :price, class: 'control-label'
+    .controls
+      = f.text_field :price
+  .control-group
+    .controls
+      = f.submit "Save as draft", class: 'btn btn-warning'
+      '&nbsp;
+      = f.submit "Publish", class: 'btn btn-success'

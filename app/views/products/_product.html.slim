@@ -7,4 +7,9 @@ li#product.span4
     h4 = product.name
     small = product.price
     p = product.description
-    a.btn.btn-primary Add to cart
+    - unless signed_in?
+      a.btn.btn-primary Add to cart
+    - else
+      = link_to "Edit", [:edit, product], class: 'btn btn-warning'
+      '&nbsp;
+      = link_to "Delete", product, method: :delete, confirm: "Are you sure you want to delete this product?", class: 'btn btn-danger'

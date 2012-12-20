@@ -1,0 +1,5 @@
+- if @products.any?
+  ul#products.thumbnails
+    = render @products
+- else
+  ' You have no unpublished products.

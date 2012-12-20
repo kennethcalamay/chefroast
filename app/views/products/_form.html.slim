@@ -9,7 +9,8 @@
       = f.label :image, class: 'control-label'
       .controls
         - if @product.image?
-          = image_tag :@product.image_url
+          = image_tag @product.image_url
+          br
         = f.hidden_field :image_cache
         = f.file_field :image
     .control-group
@@ -24,4 +25,4 @@
       .controls
         = f.submit "Save as draft", class: 'btn btn-warning'
         '&nbsp;
-        = f.submit "Publish", class: 'btn btn-success'
+        = f.submit "Publish", class: 'btn btn-success', data: { confirm: 'Are you sure you want to publish this product?' }

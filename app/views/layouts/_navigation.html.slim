@@ -16,8 +16,8 @@
         li class=(current_page?(new_product_path) ? 'active' : nil)
           = link_to "New", new_product_path
         li
-          = link_to "Drafts", "#"
+          = link_to "Drafts", drafts_products_path
         li
-          = link_to "Published", "#"
+          = link_to "Published", products_path
         li
           = link_to "Logout", destroy_user_session_path, method: :delete

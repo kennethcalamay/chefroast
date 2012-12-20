@@ -1,0 +1,8 @@
+- if resource.errors.any?
+  .alert.alert-error
+    button.close type="button" data-dismiss="alert" &times;
+    h4 #{pluralize(resource.errors.full_messages.length, 'error')} prevented this #{resource_name} from being saved:
+    ul.unstyled
+      - resource.errors.full_messages.each do |msg|
+        li
+          = msg

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index]
+  before_filter :authenticate_user!, except: [:index, :show]
   inherit_resources
 
   def index
@@ -7,13 +7,16 @@ class ProductsController < ApplicationController
   end
 
   def show
-    redirect_to root_url
+    show! and return if signed_in?
+    @product = Product.published.find params[:id]
   end
-  
+
   def create
     create! and return unless params[:commit] == 'Publish'
+    @product = Product.new(params[:product])
     @product.publish!
-    respond_with @product, notice: "Your product has been published!"
+    flash[:notice] = "Your product has been published!"
+    respond_with @product
   end
 
   def update
@@ -21,7 +24,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.update_attributes(params[:product])
     @product.publish!
-    respond_with @product, notice: "Your product has been published!"
+    flash[:notice] = "Your product has been published!"
+    respond_with @product
   end
 
   def drafts

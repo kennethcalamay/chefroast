@@ -1,5 +1,13 @@
 .thumbnail p{
   min-height: 62px;
   max-height: 62px;
-  clear: both;
+  overflow: hidden;
+}
+
+.thumbnail small{
+  border: 1px solid transparent;
+}
+
+.field_with_errors{
+  input, textarea{ border: 1px solid red; }
 }

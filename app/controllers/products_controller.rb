@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     create! and return unless params[:commit] == 'Publish'
     @product = Product.new(params[:product])
     @product.publish!
-    flash[:notice] = "Your product has been published!"
+    flash[:notice] = "Your product has been published!" unless @product.errors.any?
     respond_with @product
   end
 
@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.update_attributes(params[:product])
     @product.publish!
-    flash[:notice] = "Your product has been published!"
+    flash[:notice] = "Your product has been published!" unless @product.errors.any?
     respond_with @product
   end
 

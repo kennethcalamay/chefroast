@@ -5,9 +5,9 @@
       li
         a href="#about_us" About Us
       li class=(current_page?(root_url) || current_page?(products_path)? 'active' : nil)
-        = link_to "Menu", root_url
+        = link_to "Our Menu", root_url
       li
-        a href="#contact" Contact
+        a href="#contact" Contact Us
     ul.nav.pull-right
       - unless signed_in?
         li class=(current_page?(new_user_session_path) ? 'active' : nil)
@@ -15,9 +15,9 @@
       - else
         li class=(current_page?(new_product_path) ? 'active' : nil)
           = link_to "New", new_product_path
-        li
+        li class=(current_page?(drafts_products_path) ? 'active' : nil)
           = link_to "Drafts", drafts_products_path
-        li
+        li class=(current_page?(root_url) || current_page?(products_path) ? 'active' : nil)
           = link_to "Published", products_path
         li
           = link_to "Logout", destroy_user_session_path, method: :delete

@@ -1,10 +1,23 @@
 .navbar
   .navbar-inner
     a.brand Chef Roast
-    ul.nav
+    ul.nav.pull-left
       li
         a href="#about_us" About Us
       li class=(current_page?(root_url) || current_page?(products_path)? 'active' : nil)
         = link_to "Menu", root_url
       li
         a href="#contact" Contact
+    ul.nav.pull-right
+      - unless signed_in?
+        li class=(current_page?(new_user_session_path) ? 'active' : nil)
+          = link_to "Login", new_user_session_path
+      - else
+        li class=(current_page?(new_product_path) ? 'active' : nil)
+          = link_to "New", new_product_path
+        li
+          = link_to "Drafts", "#"
+        li
+          = link_to "Published", "#"
+        li
+          = link_to "Logout", destroy_user_session_path, method: :delete

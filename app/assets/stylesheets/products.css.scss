@@ -1,3 +1,11 @@
+html {
+  background: url('ChefRoastHeader.jpg') no-repeat top center;
+}
+body {
+  background: url('ChefRoastLowerHeader.jpg') no-repeat left bottom;
+  min-height: 768px;
+  margin-top: 330px;
+}
 .thumbnail p{
   min-height: 62px;
   max-height: 62px;

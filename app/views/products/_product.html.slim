@@ -9,7 +9,7 @@ li#product.span4
     small = number_to_currency(product.price)
     p = product.description
     - unless signed_in?
-      a.btn.btn-primary Add to cart
+     /a.btn.btn-primary Add to cart
     - else
       = link_to "Edit", [:edit, product], class: 'btn btn-warning'
       '&nbsp;

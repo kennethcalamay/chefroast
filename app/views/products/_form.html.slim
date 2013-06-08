@@ -1,30 +1,31 @@
-= form_for @product, html: { class: 'form-horizontal' } do |f|
-  fieldset
-    legend Add a new Product
-    = render 'layouts/errors', resource: @product, resource_name: :product
-    .control-group
-      = f.label :name, class: 'control-label'
-      .controls
-        = f.text_field :name
-    .control-group
-      = f.label :image, class: 'control-label'
-      .controls
-        - if @product.image?
-          = image_tag @product.image_url
-          br
-        = f.hidden_field :image_cache
-        = f.file_field :image
-    .control-group
-      = f.label :description, class: 'control-label'
-      .controls
-        = f.text_area :description, rows: 3
-    .control-group
-      = f.label :price, class: 'control-label'
-      .controls
-        = f.text_field :price
-    .control-group
-      .controls
-        = f.hidden_field :published, value: false
-        = f.submit "Save as draft", class: 'btn btn-warning'
-        '&nbsp;
-        = f.submit "Publish", class: 'btn btn-success', data: { confirm: 'Are you sure you want to publish this product?' }
+#products
+  = form_for @product, html: { class: 'form-horizontal' } do |f|
+    fieldset
+      legend Add a new Product
+      = render 'layouts/errors', resource: @product, resource_name: :product
+      .control-group
+        = f.label :name, class: 'control-label'
+        .controls
+          = f.text_field :name
+      .control-group
+        = f.label :image, class: 'control-label'
+        .controls
+          - if @product.image?
+            = image_tag @product.image_url
+            br
+          = f.hidden_field :image_cache
+          = f.file_field :image
+      .control-group
+        = f.label :description, class: 'control-label'
+        .controls
+          = f.text_area :description, rows: 3
+      .control-group
+        = f.label :price, class: 'control-label'
+        .controls
+          = f.text_field :price
+      .control-group
+        .controls
+          = f.hidden_field :published, value: false
+          = f.submit "Save as draft", class: 'btn btn-warning'
+          '&nbsp;
+          = f.submit "Publish", class: 'btn btn-success', data: { confirm: 'Are you sure you want to publish this product?' }

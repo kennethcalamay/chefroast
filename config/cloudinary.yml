@@ -12,8 +12,8 @@ test:
   enhance_image_tag: true
   static_image_support: false
 production:
-  cloud_name: kenneth-calamay
-  api_key: '161319424552435'
-  api_secret: LFBt4cE9fqBCE8TRwEHGg7kEmbc
+  cloud_name: chefroast
+  api_key: '789282798267848'
+  api_secret: wRQ-3DiTy4EcaaZkaKxYxm5DeFE
   enhance_image_tag: true
   static_image_support: true

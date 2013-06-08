@@ -14,6 +14,6 @@ test:
 production:
   cloud_name: chefroast
   api_key: '789282798267848'
-  api_secret: wRQ-3DiTy4EcaaZkaKxYxm5DeFE
+  api_secret: 'wRQ-3DiTy4EcaaZkaKxYxm5DeFE'
   enhance_image_tag: true
   static_image_support: true

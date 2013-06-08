@@ -3,7 +3,7 @@
 class ProductImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  process tags: ['chefroast', 'product', 'chefroast product']
+  process tags: ["chefroast #{Rails.env} product"]
 
   version :thumbnail do
     resize_to_fill(290, 193, :center)

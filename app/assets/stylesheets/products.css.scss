@@ -1,14 +1,17 @@
 html {
-  background: url('ChefRoastHeader.jpg') no-repeat top center;
+  background: url('ChefRoastHeader.jpg') no-repeat left top;
 }
+
 body {
   background: url('ChefRoastLowerHeader.jpg') no-repeat left bottom;
   min-height: 768px;
-  margin-top: 330px;
+  margin-top: 315px;
 }
+
 #products {
   margin-bottom: 100px;
 }
+
 .thumbnail p{
   min-height: 62px;
   max-height: 62px;

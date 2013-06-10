@@ -3,5 +3,7 @@ Chefroast::Application.routes.draw do
   resources :products do
     get :drafts, on: :collection
   end
+  get 'about' => 'static#about'
+  get 'contact' => 'static#contact'
   root to: "products#index"
 end

@@ -2,8 +2,8 @@
   .navbar-inner
     = link_to "Chef Roast", root_url, class: 'brand'
     ul.nav.pull-left
-      li
-        a href="#about_us" About Us
+      li class=current_page?(about_path)
+        = link_to "About Us", about_path
       li class=(current_page?(root_url) || current_page?(products_path)? 'active' : nil)
         = link_to "Our Menu", root_url
       li

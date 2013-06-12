@@ -2,12 +2,12 @@
   .navbar-inner
     = link_to "Chef Roast", root_url, class: 'brand'
     ul.nav.pull-left
-      li class=current_page?(about_path)
+      li class=(current_page?(about_path) ? 'active' : nil)
         = link_to "About Us", about_path
       li class=(current_page?(root_url) || current_page?(products_path)? 'active' : nil)
         = link_to "Our Menu", root_url
-      li
-        a href="#contact" Contact Us
+      li class=(current_page?(contact_path) ? 'active' : nil)
+        = link_to "Contact Us", contact_path
     ul.nav.pull-right
       - unless signed_in?
         li class=(current_page?(new_user_session_path) ? 'active' : nil)

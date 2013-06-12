@@ -2,7 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 gem 'mysql2', group: [:development, :test]
-gem 'pg', group: [:production]
+
+group :production do
+  gem 'pg'
+  gem 'newrelic_rpm'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

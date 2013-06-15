@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 gem 'mysql2', group: [:development, :test]
+gem 'dalli'
+gem 'memcachier'
 
 group :production do
   gem 'pg'

@@ -7,7 +7,10 @@ li#product.span4
     = link_to img, product
     h4 = link_to truncate(product.name, length: 28), product
     small = number_to_currency(product.price)
-    p = product.description
+    p
+      = truncated = truncate(product.description, length: 110)
+      - if product.description.length > truncated.length
+        = link_to 'read more', product
     - unless signed_in?
      /a.btn.btn-primary Add to cart
     - else

@@ -48,8 +48,8 @@ lightbox = new Lightbox options
   LightboxOptions = (function() {
 
     function LightboxOptions() {
-      this.fileLoadingImage = '/assets/loading.gif';
-      this.fileCloseImage = '/assets/close.png';
+      this.fileLoadingImage = 'http://res.cloudinary.com/chefroast/image/upload/v1371319663/loading_ykqasj.gif';
+      this.fileCloseImage = 'http://res.cloudinary.com/chefroast/image/upload/v1371319659/close_v5molb.png';
       this.resizeDuration = 700;
       this.fadeDuration = 500;
       this.labelImage = "Image";

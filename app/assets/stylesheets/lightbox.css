@@ -111,12 +111,12 @@
 
 /* line 81, ../sass/lightbox.sass */
 .lb-prev:hover {
-  background: url(prev.png) left 48% no-repeat;
+  background: url(http://res.cloudinary.com/chefroast/image/upload/v1371319660/prev_sx9x0c.png) left 48% no-repeat;
 }
 
 /* line 85, ../sass/lightbox.sass */
 .lb-next:hover {
-  background: url(next.png) right 48% no-repeat;
+  background: url(http://res.cloudinary.com/chefroast/image/upload/v1371319660/next_aoiug5.png) right 48% no-repeat;
 }
 
 /* line 88, ../sass/lightbox.sass */

@@ -1,16 +1,26 @@
+- if product.image?
+  - thumbnail = image_tag product.image_url(:thumbnail)
+  - image = product.image_url
+- else
+  - image = thumbnail = image_tag("http://placehold.it/300x200")
+
+- price = number_to_currency(product.price)
+- name_desc_price = raw("<strong>#{product.name}</strong><br>#{price}<br>#{product.description}")
+
 li#product.span4
   .thumbnail
-    - if product.image?
-      - img =image_tag product.image_url(:thumbnail)
-    - else
-      - img = image_tag("http://placehold.it/300x200")
-    = link_to img, product
-    h4 = link_to truncate(product.name, length: 28), product
+    / image
+    = link_to(thumbnail, image, rel: 'lightbox[gallery]', title: name_desc_price)
+
+    / title
+    h4 = link_to truncate(product.name, length: 28), image, rel: 'lightbox[name]', title: name_desc_price
+
+    / price
     small = number_to_currency(product.price)
     p
       = truncated = truncate(product.description, length: 110)
       - if product.description.length > truncated.length
-        = link_to 'read more', product
+        = link_to 'read more', image, rel: 'lightbox', title: name_desc_price
     - unless signed_in?
      /a.btn.btn-primary Add to cart
     - else

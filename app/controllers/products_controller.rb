@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   inherit_resources
 
   def index
-    @products = Product.published
+    @products = Product.all_cached
   end
 
   def show

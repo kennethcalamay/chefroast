@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
-  caches_action :index
-
   before_filter :authenticate_user!, except: [:index, :show]
   inherit_resources
+
+  caches_action :index
 
   def index
     @products = Product.all
@@ -14,6 +14,8 @@ class ProductsController < ApplicationController
   end
 
   def create
+    expire_action action: :index
+
     create! and return unless params[:commit] == 'Publish'
     @product = Product.new(params[:product])
     @product.publish!
@@ -22,6 +24,8 @@ class ProductsController < ApplicationController
   end
 
   def update
+    expire_action action: :index
+
     update! and return unless params[:commit] == 'Publish'
 
     @product = Product.find(params[:id])
@@ -29,13 +33,13 @@ class ProductsController < ApplicationController
     @product.publish!
     unless @product.errors.any?
       flash[:notice] = "Your product has been published!"
-      expire_action action: :index
     end
     respond_with @product
   end
 
   def destroy
     expire_action action: :index
+
     destroy!
   end
 

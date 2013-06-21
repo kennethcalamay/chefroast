@@ -1,8 +1,9 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
+
   inherit_resources
 
-  caches_action :index
+  caches_action :index, layout: false
 
   def index
     @products = Product.all

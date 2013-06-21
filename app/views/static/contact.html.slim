@@ -2,6 +2,16 @@
   .page-header
     h1 Contact Chef Roast
 
+  - image_desc = "The pioneers of Chef Roast Specialty Food and Pastries during the 7th Manila Foods and Beverages Expo 2013 at the World Trade Center, Chef Chris Regis (utmost right) and Acting Marketing Head Ariel Bin Tumala (utmost left), with events support Jerome Trinidad (inner left) and Somar Cosido (inner right)"
+  - image_url = 'http://res.cloudinary.com/chefroast/image/upload/v1371707876/MAFBEX_event_2013_byslfm.jpg'
+  - thumbnail = image_tag(image_url, width: 318)
+
+  = link_to(image_url, rel: 'lightbox', title: image_desc) do
+    .picture.right style='width: 320px;'
+      = thumbnail
+      br
+      = image_desc
+
   ol
     li.lead To order, please call 942-8963 or send SMS to 916-4289981. Please take note that we require at least 2 days advance in placing orders.
     li.lead We would require a 50% downpayment for total orders ₱1,500.00 and above.

@@ -1,0 +1,25 @@
+a{
+  .picture{
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 3px;
+    font: 11px/1.43em Arial, sans-serif;
+    color: black;
+  
+    img{
+      border: 1px solid #ccc;
+      vertical-align: middle;
+      margin-bottom: 3px;
+    }
+  }
+}
+
+.right{
+  margin: 0.5em 0pt 0.5em 0.8em;
+  float: right;
+}
+
+.left{
+  margin: 0.5em 0.8em 0.5em 0;
+  float: left;
+}

@@ -1,6 +1,6 @@
 class StaticController < ApplicationController
 
-  caches_action: [:about, :contact], layout: false
+  caches_action :about, :contact, layout: false
 
   def about
   end
